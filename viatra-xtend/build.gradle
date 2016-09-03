@@ -1,0 +1,33 @@
+buildscript {
+    dependencies {
+        classpath 'org.xtext:xtext-gradle-plugin:1.0.2'
+    }
+    repositories {
+        jcenter()
+    }
+}
+
+plugins {
+    id "org.xtext.xtend" version "1.0.0"
+}
+
+group 'hu.bme.mit.experimental'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'org.xtext.xtend'
+
+ext.xtendVersion = '2.10.0'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    maven { url "https://repo.eclipse.org/content/groups/viatra2" }
+}
+
+dependencies {
+    compile group: 'org.eclipse.xtend', name: 'org.eclipse.xtend.lib', version: xtendVersion
+    compile group: 'org.eclipse.xtext', name: 'org.eclipse.xtext.xbase.lib', version: xtendVersion
+    compile group: 'org.eclipse.viatra', name: 'viatra-query-runtime', version: '1.3.0'
+    compile group: 'org.eclipse.viatra', name: 'viatra-transformation-runtime', version: '1.3.0'
+    compile group: 'hu.bme.mit.trainbenchmark', name: 'trainbenchmark-tool-viatra-patterns', version: '1.0.0-SNAPSHOT'
+}
