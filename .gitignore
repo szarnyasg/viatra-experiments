@@ -56,4 +56,5 @@ gradle-app.setting
 
 xtend-gen
 *._trace
+out/
 
